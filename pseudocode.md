@@ -106,3 +106,56 @@ while kamu mengantuk (KADAR_KANTUK > 0) {
 }
 
 do 'bangun'
+
+
+# kang becak
+
+## 1
+
+input and save JUMLAH_PENUMPANG
+declare KECEPATAN = 20
+
+if JUMLAH_PENUMPANG = 3
+  do calculate KECEPATAN - 5 = KECEPATAN_BARU
+else if JUMLAH_PENUMPANG = 4
+  do calculate KECEPATAN - 7 = KECEPATAN_BARU
+else if JUMLAH_PENUMPANG = 1 OR JUMLAH_PENUMPANG = 2
+  do calculate KECEPATAN - 2 = KECEPATAN_BARU
+else
+  save KECEPATAN_BARU = "maksimal 4 orang"
+
+show KECEPATAN_BARU
+
+## 2
+
+input and save JUMLAH_PENUMPANG
+declare KECEPATAN = 20
+
+if JUMLAH_PENUMPANG > 2 AND JUMLAH_PENUMPANG < 4
+  KECEPATAN_BARU = KECEPATAN - 5
+else if JUMLAH_PENUMPANG === 4
+  KECEPATAN_BARU = KECEPATAN - 7
+else
+  KECEPATAN_BARU = KECEPATAN - 2
+
+show KECEPATAN_BARU
+
+## 3
+
+input and save JUMLAH_PENUMPANG
+declare KECEPATAN = 20
+
+if jumlahPenumpang > 4
+  show "invalid"
+
+else
+  if JUMLAH_PENUMPANG === 4
+    KECEPATAN_BARU = KECEPATAN - 7
+
+  else if JUMLAH_PENUMPANG > 2
+    KECEPATAN_BARU = KECEPATAN - 5
+
+  else
+    KECEPATAN_BARU = KECEPATAN - 2
+
+  show KECEPATAN_BARU
